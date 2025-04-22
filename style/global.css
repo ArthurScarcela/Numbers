@@ -73,3 +73,7 @@ header {
 .endless {
   display: none;
 }
+
+.onlyMobile {
+  display: none;
+}

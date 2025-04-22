@@ -27,7 +27,7 @@
         <h1>SORTEADOR DE NÚMEROS</h1>
       </div>
 
-      <div class="description">
+      <div class="description only-desktop">
         <div class="first">
           <span>
             <img src="/assets/icons/thinking.svg" alt="" />
@@ -52,8 +52,8 @@
       </div>
     </section>
 
-    <section class="content-form" >
-      <div class="draw-information initial" >
+    <section class="content-form">
+      <div class="draw-information initial">
         <h2>QUERO SORTEAR:</h2>
         <p>
           defina o intervalo e a quantidade de números, clique em "Sortear" e
@@ -61,19 +61,19 @@
         </p>
       </div>
 
-      <form class="draw-box" >
-        
+      <form class="draw-box">
+
         <div class="draw-form initial">
           <fieldset>
             <legend>Números</legend>
-            <input placeholder="0" id="counter" type="number" inputmode="numeric" min="0" max="10"  class="numInput">
+            <input placeholder="0" id="counter" type="number" inputmode="numeric" min="0" max="10" class="numInput">
           </fieldset>
-  
+
           <fieldset>
             <legend>De</legend>
             <input placeholder="0" id="min" type="number" inputmode="numeric" min="0" class="numInput">
           </fieldset>
-  
+
           <fieldset>
             <legend>A</legend>
             <input placeholder="0" id="max" type="number" inputmode="numeric" min="0" max="100" class="numInput">
@@ -86,7 +86,7 @@
           <span>Não repetir número</span>
         </div>
 
-  
+
         <div class="draw-btn-container initial">
           <button type="submit" onclick="draw()" id="draw-btn">
             SORTEAR
@@ -99,19 +99,47 @@
       <div class="draw-header endless">
         <h2>Resultado do sorteio</h2>
         <p id="drawCounter"></p>
-
-      <div class="drawResults">
       </div>
+        <div class="drawResults">
+        </div>
 
-      <div class="draw-again endless">
-        <button type="submit" onclick="drawAgain()">
-          SORTEAR NOVAMENTE
-          <div id="icon-animation-spin">
-            <span id="circle-arrow"><img src="/assets/icons/circle-arrow.svg" alt=""></span>
-            <span id="play"><img src="/assets/icons/play.svg" alt=""></span>
+        <div class="draw-again endless">
+          <button type="submit" onclick="drawAgain()">
+            SORTEAR NOVAMENTE
+            <div id="icon-animation-spin">
+              <span id="circle-arrow"><img src="/assets/icons/circle-arrow.svg" alt=""></span>
+              <span id="play"><img src="/assets/icons/play.svg" alt=""></span>
+            </div>
+          </button>
+        </div>
+
+
+        <div class="description onlyMobile">
+          <div class="first">
+            <span>
+              <img src="/assets/icons/thinking.svg" alt="" />
+              Como funciona o sorteador de números?
+            </span>
+            <p>
+              O sorteador utiliza um algoritmo de geração aleatória para criar
+              números dentro do intervalo especificado pelo usuário.
+            </p>
           </div>
-        </button>
-      </div>
+  
+          <div class="second">
+            <span>
+              <img src="/assets/icons/thinking.svg" alt="" />
+              Posso escolher o intervalo dos números?
+            </span>
+            <p>
+              Sim, você pode definir os valores mínimo e máximo para o intervalo
+              dos números sorteados.
+            </p>
+          </div>
+        </div>
+
+        
+
     </section>
   </main>
 

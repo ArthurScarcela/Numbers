@@ -12,7 +12,8 @@ const circle = document.getElementById("toggle-circle")
 
 const initialOnly = document.getElementsByClassName("initial")
 const endlessEl = document.getElementsByClassName("endless")
-
+const drawHeader = document.querySelector(".draw-header")
+const drawAgainBtn = document.querySelector(".draw-again")
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -22,62 +23,71 @@ form.addEventListener('submit', (event) => {
  exibe os números em tela*/
 
 function draw() {
-  
+
   const inputCounter = document.getElementById("counter")
   const inputMax = document.getElementById("max")
   const inputMin = document.getElementById("min")
-  
+
   let counter = parseInt(inputCounter.value)
   let minNum = parseInt(inputMin.value)
   let maxNum = parseInt(inputMax.value)
-  
+
   if (isNaN(counter) || counter <= 0 || counter > 10) {
     alert("A quantidade de números sorteados deve estar entre 1 e 10");
     inputCounter.value = "";
     return;
   }
-  
-  
-  
+
+
+
   const rangeSize = maxNum - minNum + 1;
   if (toggleStatus && counter > rangeSize) {
     alert("Não é possível sortear essa quantidade sem repetir os números.");
     return;
   }
-  
-  for (let i = 0; i < initialOnly.length; i++){
+
+  for (let i = 0; i < initialOnly.length; i++) {
     initialOnly[i].style.display = "none";
   }
 
+  drawHeader.style.display = "flex"
+
   drawCounter.textContent = `${drawIndex}º Sorteio`
-  
-  for(let i = 0; i < endlessEl.length; i++){
-    endlessEl[i].style.display = "flex";
-  }
 
   while (numbers.length < counter) {
     const drawNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum
     if (toggleStatus) {
       if (!numbers.includes(drawNumber)) {
         numbers.push(drawNumber);
-        
+
       }
     } else {
       numbers.push(drawNumber)
     }
   }
 
-  for(var i = 0; i < numbers.length; i++) {
-    const result = document.createElement("span")
-    const effectBox = document.createElement("span")
-    result.className = "drawNumbers"
-    effectBox.className = "effectBox"
+  numbers.forEach((number, index) => {
+    const delayTime = 2500
+    setTimeout(() => {
 
-    result.textContent = `${numbers[i]}`
+      const result = document.createElement("span")
+      const effectBox = document.createElement("span")
+      result.className = "drawNumbers"
+      effectBox.className = "effectBox"
 
-    result.append(effectBox)
-    drawResults.append(result)
-  }
+      result.textContent = `${number}`
+
+      result.append(effectBox)
+      drawResults.append(result)
+    }, index * delayTime)
+    console.log(numbers)
+  });
+
+  const totalDelay = numbers.length * 2500;
+  setTimeout(() => {
+      drawAgainBtn.style.display = "flex"
+      drawAgainBtn.disabled = false
+  }, totalDelay)
 
 }
 
@@ -97,30 +107,30 @@ toggleContainer.addEventListener("click", () => {
 })
 
 function drawAgain() {
-  while(numbers.length > 0){
+  while (numbers.length > 0) {
     numbers.pop()
   }
 
   drawResults.innerHTML = ""
-  
-    ++drawIndex
-  
-    for (let i = 0; i < initialOnly.length; i++){
-      initialOnly[i].style.display = "flex";
-    }
-      initialOnly[0].style.display = "block";
-  
-    for(let i = 0; i < endlessEl.length; i++){
-      endlessEl[i].style.display = "none";
-    }
-  
-    const inputCounter = document.getElementById("counter")
-    const inputMax = document.getElementById("max")
-    const inputMin = document.getElementById("min")
-  
-  
-    inputCounter.value = "";
-    inputMax.value = "";
-    inputMin.value = ""
+
+  ++drawIndex
+
+  for (let i = 0; i < initialOnly.length; i++) {
+    initialOnly[i].style.display = "flex";
+  }
+  initialOnly[0].style.display = "block";
+
+  for (let i = 0; i < endlessEl.length; i++) {
+    endlessEl[i].style.display = "none";
+  }
+
+  const inputCounter = document.getElementById("counter")
+  const inputMax = document.getElementById("max")
+  const inputMin = document.getElementById("min")
+
+
+  inputCounter.value = "";
+  inputMax.value = "";
+  inputMin.value = ""
 
 }
