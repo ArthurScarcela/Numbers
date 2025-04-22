@@ -201,15 +201,7 @@
   }
 }
 
-@keyframes arrow { 
-  0%{
-    transform: translate(0);
-  }
-  100% {
-    transform: translate(10px);
-  }
-  
-}
+
 
 @media (width < 480px){
   .only-desktop{
