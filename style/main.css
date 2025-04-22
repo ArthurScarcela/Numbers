@@ -1,0 +1,199 @@
+.container {
+  max-width: 1098px;
+  max-height: 25.75rem;
+  margin-top: 89px;
+  margin-inline: .875rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  & .content {
+    margin-right: 6.75rem;
+
+    & .title {
+      width: 100%;
+
+      & p {
+        font: var(--overline);
+      }
+
+      & h1 {
+
+        font: var(--display-large);
+        margin-top: 0.75rem;
+        word-spacing: -1px;
+      }
+    }
+
+    & .description {
+      max-width: 24.12rem;
+      margin-top: 2.375rem;
+
+      & span {
+        display: flex;
+        align-items: center;
+        color: var(--content-brand);
+
+        gap: 0.5rem;
+        font: var(--paragraph-md);
+      }
+
+      & p {
+        font: var(--paragraph-sm);
+        margin-left: 1.75rem;
+      }
+
+      & .first {
+        p {
+          margin-bottom: 2.25rem;
+        }
+      }
+    }
+  }
+
+  & .content-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 30.125rem;
+
+    & .draw-information {
+      & h2 {
+        font: var(--label-md);
+      }
+
+      & p {
+        font: var(--paragraph-lg);
+        color: var(--content-secondary);
+      }
+    }
+
+    & .draw-box {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+
+      & .draw-form{
+        display: flex;
+        gap: 0.75rem;
+
+        & fieldset {
+          width: 86px;
+          height: 88px;
+  
+          border: none;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+  
+          font: var(--label-sm);
+          color: var(--content-secondary);
+          text-transform: uppercase;
+  
+          & span {
+            background-color: var(--background-secondary);
+            border: none;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            border-radius: .5rem;
+    
+            font: var(--display-sm);
+            color: var(--content-primary);
+            margin-top: 0.75rem;
+          }
+          & .numInput {
+            background-color: var(--background-secondary);
+            border: none;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            border-radius: .5rem;
+    
+            font: var(--display-sm);
+            color: var(--content-primary);
+            margin-top: 0.75rem;
+    
+            text-align: center;
+          }
+           & input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
+          & input[type=number]{
+            -moz-appearance: textfield;
+            appearance: textfield;
+          }
+        }
+      }
+
+    }
+    & .toggle-norepeat {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: .5rem;
+
+      font: var(--paragraph-sm);
+      color: var(--content-secondary);
+    }
+
+    & #toggle-container {
+      position: relative;
+      width: 30px;
+      height: 20px;
+      border: none;
+      border-radius: 1rem;
+
+      background-color: var(--content-tertiary);
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+
+      & #toggle-circle {
+        position: relative;
+        left: 3px;
+
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+
+        background-color: var(--content-primary);
+        transition: all 1s;
+      }
+    }
+
+    & .draw-btn-container {
+      margin-top: 2.5rem;
+      padding: 1px;
+      border-radius: .5rem;
+      
+
+      & button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-block: 1rem;
+        gap: .5rem;
+
+        border: none;
+        border-radius: .5rem;
+
+        background-color: var(--background-tertiary);
+        font: var(--label-sm);
+        color: var(--content-primary);
+
+        cursor: pointer;
+        &:hover {
+          background-color: var(--background-secondary);
+          transition: all .5s;
+        }
+      }
+    }
+    & .draw-btn-container:hover {
+      background: var(--gradient-border);
+    }
+  }
+}

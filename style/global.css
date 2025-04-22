@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*Content*/
+  --content-primary: #ffffff;
+  --content-secondary: #c7c9cc;
+  --content-tertiary: #d9d9d9;
+  --content-brand: #c58de7;
+  --color-inverse: #030203;
+
+  /*Background*/
+  --background-primary: #020202;
+  --background-secondary: #111012;
+  --background-tertiary: #24222e;
+  --background-brand: #c58de7;
+  --background-gray: #3d3d3d;
+
+  /* Accent */
+  --accent-pink: #d586e0;
+  --accent-blue: #91a1fa;
+  --accent-green: #77C0A;
+  --accent-lime: #d1dc97;
+  --accent-red: #e9a9b3;
+
+  /* Gradient */
+  --gradient-border: linear-gradient(90deg, #77c0af 0%, #d1dc97 14.84%, #e9a9b3 32.15%,
+    #d586e0 65.79%, #91a1fa 84.58%);
+  --gradient-content: #d586e0 0%, #91a1fa 98.93%;
+  --gradient: #c7c9cc 0%, #3d3d3d 100%;
+
+  /* Tipografia */
+  --sora: "Sora", sans-serif;
+  --display-large: 800 72px/130% var(--sora);
+  --display-md: 800 40px/130% var(--sora);
+  --display-sm: 600 32px/130% var(--sora);
+
+  --roboto-mono: "Roboto Mono", monospace;
+  --overline: 600 16px/150% var(--roboto-mono);
+
+  --roboto-flex: "Roboto Flex", sans-serif;
+  --paragraph-lg: 400 16px/150% var(--roboto-flex);
+  --paragraph-md: 400 14px/150% var(--roboto-flex);
+  --paragraph-sm: 400 12px/150% var(--roboto-flex);
+  --label-md: 600 20px/150% var(--roboto-flex);
+  --label-sm: 600 16px/150% var(--roboto-flex);
+
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--background-primary) url("/assets/images/Linha.svg");
+  color: #FFFFFF;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+header {
+  display: flex;
+  align-items: start;
+
+  width: 1098px;
+  margin-top: 4.75rem;
+}
+
+.endless {
+  display: none;
+}

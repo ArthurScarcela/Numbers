@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style/index.css" />
+  <link rel="icon" href="/assets/icons/logo-icon.png" />
+
+  <title>Numbers</title>
+</head>
+
+<body>
+  <header>
+    <img src="/assets/icons/logo.png" alt="logo_numbers" />
+  </header>
+
+  <main class="container">
+    <section class="content">
+      <div class="title">
+        <p>ONLINE - GRATUITO</p>
+        <h1>SORTEADOR DE NÚMEROS</h1>
+      </div>
+
+      <div class="description">
+        <div class="first">
+          <span>
+            <img src="/assets/icons/thinking.svg" alt="" />
+            Como funciona o sorteador de números?
+          </span>
+          <p>
+            O sorteador utiliza um algoritmo de geração aleatória para criar
+            números dentro do intervalo especificado pelo usuário.
+          </p>
+        </div>
+
+        <div class="second">
+          <span>
+            <img src="/assets/icons/thinking.svg" alt="" />
+            Posso escolher o intervalo dos números?
+          </span>
+          <p>
+            Sim, você pode definir os valores mínimo e máximo para o intervalo
+            dos números sorteados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-form" >
+      <div class="draw-information initial" >
+        <h2>QUERO SORTEAR:</h2>
+        <p>
+          defina o intervalo e a quantidade de números, clique em "Sortear" e
+          veja os resultados na tela. É rápido e fácil!
+        </p>
+      </div>
+
+      <form class="draw-box" >
+        
+        <div class="draw-form initial">
+          <fieldset>
+            <legend>Números</legend>
+            <input placeholder="0" id="counter" type="number" inputmode="numeric" min="0" max="10"  class="numInput">
+          </fieldset>
+  
+          <fieldset>
+            <legend>De</legend>
+            <input placeholder="0" id="min" type="number" inputmode="numeric" min="0" class="numInput">
+          </fieldset>
+  
+          <fieldset>
+            <legend>A</legend>
+            <input placeholder="0" id="max" type="number" inputmode="numeric" min="0" max="100" class="numInput">
+          </fieldset>
+        </div>
+        <div class="toggle-norepeat initial">
+          <div id="toggle-container">
+            <span id="toggle-circle"></span>
+          </div>
+          <span>Não repetir número</span>
+        </div>
+
+  
+        <div class="draw-btn-container initial">
+          <button type="submit" onclick="draw()" id="draw-btn">
+            SORTEAR
+            <img src="/assets/icons/forward.svg" alt="">
+          </button>
+        </div>
+
+      </form>
+
+      <div class="draw-header endless">
+        <h2>Resultado do sorteio</h2>
+        <p id="drawCounter"></p>
+
+      <div class="drawResults">
+      </div>
+
+      <div class="draw-again endless">
+        <button type="submit" onclick="drawAgain()">
+          SORTEAR NOVAMENTE
+          <div id="icon-animation-spin">
+            <span id="circle-arrow"><img src="/assets/icons/circle-arrow.svg" alt=""></span>
+            <span id="play"><img src="/assets/icons/play.svg" alt=""></span>
+          </div>
+        </button>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
